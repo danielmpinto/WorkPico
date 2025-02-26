@@ -45,4 +45,11 @@ RUN chmod +x /usr/local/bin/wokwi-cli
 RUN curl -L https://raw.githubusercontent.com/rafaelcorsi/wokwi-cli/main/scripts/install.sh | sh
 
 
+RUN git clone https://github.com/danielmpinto/WorkPico
+
+WORKDIR /WorkPico/scripts
+
+RUN sh cmsis-device-config.sh
+
+
 # creating tester && client cmsis-XXX.cfg
